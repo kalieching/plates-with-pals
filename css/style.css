@@ -383,14 +383,34 @@ body.dark-mode .tag:hover {
 /* Post meta section (combines tags and attendees) */
 .post-meta {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;  /* Changed from wrap */
     gap: 10px;
     margin-bottom: 20px;
     padding-bottom: 15px;
     border-bottom: 1px solid #f0f0f0;
     align-items: center;
+    overflow-x: auto;  /* Add horizontal scroll */
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;  /* Smooth scrolling on iOS */
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE/Edge */
 }
 
-body.dark-mode .post-meta {
-    border-bottom: 1px solid #404040;
+/* Optional: Hide scrollbar but keep functionality */
+.post-meta::-webkit-scrollbar {
+    height: 6px;
+    display: none;  /* Chrome/Safari */
+}
+
+.post-meta::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.post-meta::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+body.dark-mode .post-meta::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
 }
