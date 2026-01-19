@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light mode (default) */
+body {
+    background-color: #faf9f6;
+    color: #333;
+}
+
+/* Dark mode */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 30px 20px 10px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.dark-mode header h1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+main {
+    margin-bottom: 60px;
+}
+
+.blog-container {
+    margin-top: 10px;
+}
+
+.blog-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f5576c;
+    padding-bottom: 10px;
+}
+
+body.dark-mode .blog-container h2 {
+    border-bottom: 2px solid #764ba2;
+}
+
+.blog-post {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .blog-post {
+    background: #2a2a2a;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .blog-post:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.blog-post h3 {
+    color: #f5576c;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+body.dark-mode .blog-post h3 {
+    color: #764ba2;
+}
+
+.blog-post p {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Attendees section */
+.attendees {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+body.dark-mode .attendees {
+    border-bottom: 1px solid #404040;
+}
+
+.attendee {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f8f8f8;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: background 0.2s ease;
+}
+
+body.dark-mode .attendee {
+    background: #333;
+}
+
+.attendee:hover {
+    background: #f0f0f0;
+}
+
+body.dark-mode .attendee:hover {
+    background: #3a3a3a;
+}
+
+.attendee-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+body.dark-mode .attendee-avatar {
+    background: #2a2a2a;
+}
+
+.attendee-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.attendee-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.attendee-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+}
+
+body.dark-mode .attendee-name {
+    color: #e0e0e0;
+}
+
+.attendee-rating {
+    font-size: 0.85rem;
+    color: #f5576c;
+    font-weight: 700;
+}
+
+body.dark-mode .attendee-rating {
+    color: #764ba2;
+}
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: #f5576c;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .dark-mode-toggle {
+    background: #764ba2;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .blog-container h2 {
+        font-size: 1.5rem;
+    }
+    
+    .blog-post {
+        padding: 20px;
+    }
+    
+    .attendees {
+        gap: 8px;
+    }
+    
+    .attendee {
+        padding: 5px 10px;
+    }
+    
+    .attendee-avatar {
+        width: 25px;
+        height: 25px;
+        font-size: 0.9rem;
+    }
+    
+    .attendee-name {
+        font-size: 0.85rem;
+    }
+    
+    .attendee-rating {
+        font-size: 0.8rem;
+    }
+    
+    .dark-mode-toggle {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Post tags section (cuisine and meal type) */
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.tag {
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Cuisine color codes */
+.cuisine-italian {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.cuisine-japanese {
+    background: linear-gradient(135deg, #e91e63, #c2185b);
+}
+
+.cuisine-chinese {
+    background: linear-gradient(135deg, #f44336, #d32f2f);
+}
+
+.cuisine-mexican {
+    background: linear-gradient(135deg, #ff9800, #f57c00);
+}
+
+.cuisine-american {
+    background: linear-gradient(135deg, #3f51b5, #303f9f);
+}
+
+.cuisine-french {
+    background: linear-gradient(135deg, #9c27b0, #7b1fa2);
+}
+
+.cuisine-thai {
+    background: linear-gradient(135deg, #4caf50, #388e3c);
+}
+
+.cuisine-indian {
+    background: linear-gradient(135deg, #ff5722, #e64a19);
+}
+
+.cuisine-korean {
+    background: linear-gradient(135deg, #f06292, #ec407a);
+}
+
+.cuisine-mediterranean {
+    background: linear-gradient(135deg, #00bcd4, #0097a7);
+}
+
+.cuisine-greek {
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+}
+
+.cuisine-vietnamese {
+    background: linear-gradient(135deg, #8bc34a, #689f38);
+}
+
+.cuisine-spanish {
+    background: linear-gradient(135deg, #ffc107, #ffa000);
+}
+
+.cuisine-other {
+    background: linear-gradient(135deg, #607d8b, #455a64);
+}
+
+/* Meal type color codes */
+.meal-breakfast {
+    background: linear-gradient(135deg, #ffeb3b, #fbc02d);
+    color: #333;
+}
+
+.meal-brunch {
+    background: linear-gradient(135deg, #ffca28, #ffa726);
+    color: #333;
+}
+
+.meal-lunch {
+    background: linear-gradient(135deg, #66bb6a, #43a047);
+}
+
+.meal-dinner {
+    background: linear-gradient(135deg, #5c6bc0, #3949ab);
+}
+
+.meal-drinks {
+    background: linear-gradient(135deg, #ab47bc, #8e24aa);
+}
+
+/* Dark mode adjustments for tags */
+body.dark-mode .tag:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .post-tags {
+        gap: 6px;
+    }
+    
+    .tag {
+        padding: 5px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Post meta section (combines tags and attendees) */
+.post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    align-items: center;
+}
+
+body.dark-mode .post-meta {
+    border-bottom: 1px solid #404040;
+}

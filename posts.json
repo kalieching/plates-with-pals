@@ -1,0 +1,25 @@
+[
+    {
+      "date": "1/5/2026",
+      "title": "Tonino",
+      "cuisine": "italian",
+      "mealType": "dinner",
+      "description": "Amazing pasta and wine!",
+      "attendees": [
+        {"name": "Kalie", "rating": 8.5, "avatar": ""},
+        {"name": "Fiona", "rating": 9.2, "avatar": ""},
+        {"name": "Shaida", "rating": 7.8, "avatar": ""}
+      ]
+    },
+    {
+      "date": "1/12/2026",
+      "title": "Sushi Palace",
+      "cuisine": "japanese",
+      "mealType": "dinner",
+      "description": "Fresh sashimi and great vibes",
+      "attendees": [
+        {"name": "Kalie", "rating": 9.0, "avatar": ""},
+        {"name": "Alex", "rating": 8.7, "avatar": ""}
+      ]
+    }
+  ]
